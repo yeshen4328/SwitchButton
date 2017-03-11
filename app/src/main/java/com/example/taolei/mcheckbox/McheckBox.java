@@ -26,6 +26,7 @@ public class McheckBox extends View{
     int startPos, endPos;
     int speed;
     int btnPos = 0;
+    int i = 0;
     String Tag = "onMeasure";
     Paint bottom = new Paint();
     Paint circle = new Paint();
@@ -40,14 +41,13 @@ public class McheckBox extends View{
         rframe.setColor(Color.argb(255, 191, 191, 191));
     }
 
-    @Override
-    public void setOnClickListener(@Nullable OnClickListener l) {
-        super.setOnClickListener(l);
-    }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        i++;
+        Log.i(Tag, Integer.toString(i));
         setMeasuredDimension(measureHeight(widthMeasureSpec), measureHeight(heightMeasureSpec));
         btnRadius = this.getHeight() / 2;
         viewHeight = this.getHeight() * 2 / 3 ;
@@ -101,7 +101,6 @@ public class McheckBox extends View{
        }
         if(btnPos == 0)
         {
-
             if(cx <= endPos)
             {
                 canvas.drawRoundRect(new RectF(startx, starty, startx + viewWith, starty + viewHeight), radius, radius, bottom);

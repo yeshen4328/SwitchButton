@@ -2,6 +2,7 @@ package com.example.taolei.mcheckbox;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 
 import org.w3c.dom.Attr;
 
@@ -13,5 +14,12 @@ public class SwitchButton extends McheckBox {
     public SwitchButton(Context context, AttributeSet attr)
     {
         super(context, attr);
+        this.setOnClickListener(new SwitchButtonOnclick());
+    }
+    class SwitchButtonOnclick implements OnClickListener{
+        public void onClick(View view)
+        {
+            SwitchButton.this.triger();
+        }
     }
 }

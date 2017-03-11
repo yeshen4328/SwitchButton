@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mcheckBox = (McheckBox)findViewById(R.id.cb);
-        mcheckBox.setOnClickListener(new OnclickCheckbox());
+       /* mcheckBox.setOnClickListener(new OnclickCheckbox());*/
     }
     public class OnclickCheckbox implements View.OnClickListener
     {
